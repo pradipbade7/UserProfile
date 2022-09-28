@@ -4,6 +4,8 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import Header from './components/Header';
 import ProfileList from './components/ProfileList';
 import Profile from './components/Profile';
+import Footer from './components/Footer';
+
 function App() {
 
   const [profiles, setProfiles] = useState([])
@@ -41,7 +43,9 @@ function App() {
           />
           <Route path="/profile/:id" element={<Profile />} />
         </Routes>
+        <Footer/>
     </div>
+    
     </Router>
     
   );

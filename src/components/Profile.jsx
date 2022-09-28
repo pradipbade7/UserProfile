@@ -3,9 +3,9 @@ import { useParams, Link} from 'react-router-dom'
 import Button from './Button';
 
 const Profile = () => {
-const { id } = useParams();
+const { id } = useParams(); 
 const [userprofile, setProfile] = useState([]);
-const [loading, setLoading] = useState(true); // set some state for loading
+const [loading, setLoading] = useState(true); 
 
 useEffect(() => {
     const getProfile = async () => {
@@ -37,8 +37,13 @@ const fetchProfile = async () => {
     )
   }
 return (
-    <div>
+    <div className='profile'>
         <div className="row gutters-sm">
+            <div className='col-md-12 m-3'>
+            <div className='p-2'>
+                    <Link to="/"><Button name="GO HOME" /></Link>
+                </div>
+            </div>
             <div className="col-md-4 mb-3">
                 <div className="card shadow mx-4 my-1">
                     <div className="card-body card-body-custom">
@@ -54,13 +59,11 @@ return (
                         </div>
                     </div>
                 </div>
-                <div className='m-2 p-2 text-center'>
-                    <Link to="/"><Button name="GO HOME" /></Link>
-                </div>
+                
             </div>
-            <div className="col-md-8">
+            <div className="col-md-8 mb-4">
               <div className="card shadow mx-4 my-1 overflow-hidden">
-                <div className="card-body p-5">
+                <div className="card-body pt-5">
                   <div className="row m-2">
                     <div className="col-sm-4">
                       <h6 className="mb-0">Full Name</h6>

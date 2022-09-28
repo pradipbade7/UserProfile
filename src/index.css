@@ -28,7 +28,12 @@ code {
 
 .container {
   margin: auto;
-  overflow: auto;
+  overflow: hidden;
+  
+}
+
+.profile{
+  min-height: 72vh;
 }
 
 .btn-custom{
@@ -67,4 +72,10 @@ code {
 
 .h-30vh{
   height: 30vh;
+}
+
+.footer{
+  background-color: rgb(92, 161, 140);
+  height: 4em;
+  text-align: center;
 }
