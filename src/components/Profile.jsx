@@ -52,7 +52,7 @@ return (
                             {userprofile.name?.charAt(0)}
                             </div>
                             <div className="mt-3">
-                            <h5>{userprofile.name}</h5>
+                            <h4 className='profilename'>{userprofile.name}</h4>
                             <p className="text-secondary mb-1"><i>@{userprofile.username}</i></p>
                             <p className="text-email">http://{userprofile.website}</p>
                             </div>
@@ -63,7 +63,7 @@ return (
             </div>
             <div className="col-md-8 mb-4">
               <div className="card shadow mx-4 my-1 overflow-hidden">
-                <div className="card-body pt-5">
+                <div className="card-body">
                   <div className="row m-2">
                     <div className="col-sm-4">
                       <h6 className="mb-0">Full Name</h6>
