@@ -1,24 +1,49 @@
-import logo from './logo.svg';
-import './App.css';
-
+import React from 'react'
+import { useState, useEffect } from 'react'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+import Header from './components/Header';
+import ProfileList from './components/ProfileList';
+import Profile from './components/Profile';
 function App() {
+
+  const [profiles, setProfiles] = useState([])
+
+  useEffect(() => {
+    const getProfiles = async () => {
+      const profilesFromServer = await fetchProfiles()
+      setProfiles(profilesFromServer)
+    }
+    getProfiles()
+  }, [])
+
+  const fetchProfiles = async () => {
+    const res = await fetch('https://jsonplaceholder.typicode.com/users')
+    const data = await res.json()
+    return data
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <Router>
+<div className='container'>
+      <Header/>
+      <Routes>
+          <Route
+            path='/'
+            element={
+              <>
+                {profiles.length > 0 ? (
+                  <ProfileList profiles={profiles} />
+                ) : (
+                  'No Profiles'
+                )}
+              </>
+            }
+          />
+          <Route path="/profile/:id" element={<Profile />} />
+        </Routes>
     </div>
+    </Router>
+    
   );
 }
 

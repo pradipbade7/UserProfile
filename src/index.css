@@ -11,3 +11,60 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2em;
+  justify-content: center;
+  background-color: rgb(92, 161, 140);
+  color: rgb(223, 224, 233);
+}
+
+.logo {
+  font-family: Arial, Helvetica, sans-serif;
+  padding:0.5em;
+}
+
+.container {
+  margin: auto;
+  overflow: auto;
+}
+
+.btn-custom{
+  background-color: rgb(92, 161, 140);
+  border: none;
+  padding: 0.5em 3em;
+  margin-top: 2em;
+}
+
+.btn-custom:hover{
+  background-color: rgb(16, 134, 92);
+}
+
+
+.text-email{
+  color: rgb(66, 185, 152);
+  font-weight: bold;
+  font-size: small;
+  text-decoration: underline;
+}
+
+.card-body-custom{
+  padding: 3em 0em 1em 0em;
+}
+
+.circle-text{
+  width:100px;
+  height:100px;
+  border-radius:50%;
+  font-size:35px;
+  color:rgb(65, 63, 63);
+  line-height:100px;
+  text-align:center;
+  background:rgb(165, 169, 168)
+}
+
+.h-30vh{
+  height: 30vh;
+}
